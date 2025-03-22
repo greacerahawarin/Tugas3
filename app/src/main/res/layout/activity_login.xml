@@ -23,8 +23,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="122dp"
-        android:layout_height="25dp"
+        android:layout_width="136dp"
+        android:layout_height="27dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Welcome Back!"
         android:textColor="@color/black"
