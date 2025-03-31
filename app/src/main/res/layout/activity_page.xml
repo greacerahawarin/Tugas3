@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark"
-    tools:context=".ForgetPassActivity">
+    tools:context=".PageActivity">
 
     <ImageView
         android:id="@+id/backgroundImage"
@@ -21,30 +20,17 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="146dp"
-        android:layout_height="30dp"
+        android:layout_width="186dp"
+        android:layout_height="25dp"
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-condensed-light"
-        android:text="Hello! Welcome Back"
+        android:text="Hello! Where are u going?"
         android:textColor="@color/black"
         android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@color/black"
-        android:text="Share To"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/multiAutoCompleteTextView" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -57,28 +43,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile_user2" />
 
-    <MultiAutoCompleteTextView
-        android:id="@+id/multiAutoCompleteTextView"
-        android:layout_width="330dp"
-        android:layout_height="110dp"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
         android:layout_marginTop="32dp"
-        android:text=""
-        android:textColor="@color/black"
+        android:backgroundTint="@color/black"
+        android:text="Tugas 3"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="25dp"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="36dp"
+        android:text="Tugas 4"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/iconback" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
