@@ -34,5 +34,10 @@ class PageActivity : AppCompatActivity() {
             val intentMain = Intent(this, RecyclerActivity::class.java)
             startActivity(intentMain)
         }
+
+        binding.btnBack.setOnClickListener{
+            val intentMain = Intent(this, LoginActivity::class.java)
+            startActivity(intentMain)
+        }
     }
 }

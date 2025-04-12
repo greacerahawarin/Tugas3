@@ -25,7 +25,7 @@ class RegisActivity : AppCompatActivity() {
         binding = ActivityRegisBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.imageView4.setOnClickListener {
+        binding.textView5.setOnClickListener {
             val intentMain = Intent(this, LoginActivity::class.java)
             startActivity(intentMain)
         }
