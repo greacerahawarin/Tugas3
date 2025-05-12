@@ -4,51 +4,39 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.databinding.ActivityDetailBinding
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.databinding.ActivityEditProfileBinding
 
-
-class DetailActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityDetailBinding
+class EditProfileActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityEditProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
 
-        binding = ActivityDetailBinding.inflate(layoutInflater)
+        binding = ActivityEditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        val img: ImageView = findViewById(R.id.imageView6)
-        val nama: TextView = findViewById(R.id.textView3)
-        val detail: TextView = findViewById(R.id.textView8)
-
-
-        val data = intent.getParcelableExtra<ItemData>("item")
-
-
-        data?.let {
-            img.setImageResource(it.img)
-            nama.text = it.nama
-            detail.text = it.detail
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
+        menuInflater.inflate(R.menu.menu_settings, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.item -> {
-                startActivity(Intent(this, ProfileActivity::class.java))
-                true
-            }
             R.id.item2 -> {
                 startActivity(Intent(this, SettingsActivity::class.java))
                 true

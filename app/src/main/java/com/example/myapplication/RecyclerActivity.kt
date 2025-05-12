@@ -3,28 +3,40 @@ package com.example.myapplication
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.databinding.ActivityPageBinding
+import com.example.myapplication.databinding.ActivityRecyclerBinding
 
 class RecyclerActivity : AppCompatActivity() {
     private lateinit var makeupRecyclerView: RecyclerView
     private lateinit var makeupAdapter: MyAdapter
     private lateinit var listMakeup : ArrayList<ItemData>
 
+    private lateinit var binding: ActivityRecyclerBinding
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_recycler)
+
+        binding = ActivityRecyclerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         makeupRecyclerView = findViewById(R.id.makeupRV)
         listMakeup = ArrayList()
@@ -96,5 +108,30 @@ class RecyclerActivity : AppCompatActivity() {
             intent.putExtra("item", selectedItem)
             startActivity(intent)
         }
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.item -> {
+                startActivity(Intent(this, ProfileActivity::class.java))
+                true
+            }
+            R.id.item2 -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }

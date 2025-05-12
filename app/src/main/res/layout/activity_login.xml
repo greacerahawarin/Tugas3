@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -46,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/PasswordLogin" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -61,7 +60,7 @@
         app:srcCompat="@drawable/profile_user2" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/EmailLogin"
         android:layout_width="400dp"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
@@ -70,13 +69,14 @@
         android:hint="Email"
         android:textColorHint="@android:color/darker_gray"
         android:textSize="15dp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/PasswordLogin"
         android:layout_width="400dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
@@ -85,10 +85,11 @@
         android:hint="Password"
         android:textColorHint="@android:color/darker_gray"
         android:textSize="15dp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/EmailLogin" />
 
     <TextView
         android:id="@+id/textView5"
@@ -114,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/PasswordLogin" />
 
     <View
         android:id="@+id/view3"
